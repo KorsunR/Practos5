@@ -1,0 +1,70 @@
+﻿<Page x:Class="calendaric.DayEdit"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:calendaric"
+      mc:Ignorable="d" 
+      d:DesignHeight="300" d:DesignWidth="450" ShowsNavigationUI="False"
+      Title="DayEdit" Loaded="Page_Loaded">
+
+    <Grid Margin="0,0,0,0">
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="67*"/>
+            <RowDefinition Height="112*"/>
+            <RowDefinition Height="67*"/>
+        </Grid.RowDefinitions>
+        <Label x:Name="DateLabel" Grid.Column="1" Content="Label" HorizontalAlignment="Center" Margin="0,0,0,0" Grid.Row ="0" VerticalAlignment="Center" FontSize="18" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+        <Button Content="Сохранить" VerticalAlignment="Center" HorizontalAlignment="Center" Height="33" Width="117" Grid.Row="2" Click="Button_Click" FontSize="16"/>
+
+        <StackPanel  Grid.Row="1" Grid.ColumnSpan="2" Margin="0,0,0,51" Grid.RowSpan="2" >
+            <StackPanel.Resources>
+                <Style x:Key="Flag" TargetType="CheckBox">
+                    <Style.Triggers>
+                        <Trigger Property="IsChecked" Value="False">
+                            <Setter Property="Opacity" Value="0.5"/>
+                        </Trigger>
+                    </Style.Triggers>
+
+                    <Setter Property="BorderThickness" Value="2"/>
+
+                    <Setter Property="Template">
+                        <Setter.Value>
+                            <ControlTemplate TargetType="CheckBox">
+                                <Border BorderThickness="{TemplateBinding BorderThickness}"
+                                BorderBrush="{TemplateBinding BorderBrush}"
+                                Background="Transparent"
+ >
+                                    <Image Width ="60" Height="60"  Stretch="Fill"  Source="{Binding Path=Content, RelativeSource={RelativeSource TemplatedParent}}"/>
+                                </Border>
+                            </ControlTemplate>
+                        </Setter.Value>
+                    </Setter>
+                </Style>
+            </StackPanel.Resources>
+            <ItemsControl  >
+                <Grid Width="400" >
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="20*"/>
+                        <ColumnDefinition Width="20*"/>
+                        <ColumnDefinition Width="20*"/>
+                        <ColumnDefinition Width="20*"/>
+                        <ColumnDefinition Width="20*"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="247*"/>
+                        <RowDefinition Height="153*"/>
+                    </Grid.RowDefinitions>
+                    <CheckBox x:Name="rb1" Content="/Resources/1.png" Style="{StaticResource Flag}" Width="60" Height="60" Grid.Column="0"  />
+                    <CheckBox x:Name="rb2" Content="/Resources/2.png" Style="{StaticResource Flag}" Width="60" Height="60" Grid.Column="1"/>
+                    <CheckBox x:Name="rb3" Content="/Resources/3.png" Style="{StaticResource Flag}" Width="60" Height="60" Grid.Column="2" />
+                    <CheckBox x:Name="rb4" Content="/Resources/4.png" Style="{StaticResource Flag}" Width="60" Height="60" Grid.Column="3" />
+                    <CheckBox x:Name="rb5" Content="/Resources/5.jpg" Style="{StaticResource Flag}" Width="60" Height="60" Grid.Column="4"/>
+                    
+                </Grid>
+            </ItemsControl>
+        </StackPanel>
+
+    </Grid>
+</Page>

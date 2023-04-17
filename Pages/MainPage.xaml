@@ -1,0 +1,20 @@
+﻿<Page x:Class="calendaric.Pages.MainPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:calendaric.Pages"
+      mc:Ignorable="d" 
+      d:DesignHeight="400" d:DesignWidth="550"
+      Title="MainPage" Loaded="Page_Loaded" ShowsNavigationUI="False">
+
+    <Grid x:Name="CalendarGrid">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="89*"/>
+            <RowDefinition Height="345*"/>
+        </Grid.RowDefinitions>
+        <Label x:Name="CurrentDateLabel" Content="Label" HorizontalAlignment="Center" Grid.Row="0" Grid.Column="0" Margin="0,10,0,0" VerticalAlignment="Top" FontSize="24"/>
+        <Button x:Name="Previous" Content="&lt;" HorizontalAlignment="Left"  VerticalContentAlignment="Center" Margin="10,16,0,0" VerticalAlignment="Top" Height="50" Width="50" FontSize="24" Click="Previous_Click"/>
+        <Button x:Name="Next" Content="&gt;" HorizontalAlignment="Right" VerticalContentAlignment="Center" Margin="0,16,10,0" VerticalAlignment="Top" Height="50" Width="50" FontSize="24" Click="Next_Click"/>
+    </Grid>
+</Page>
